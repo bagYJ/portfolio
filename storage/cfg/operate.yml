@@ -1,0 +1,18 @@
+day:
+  0:
+    text: 월
+  1:
+    text: 화
+  2:
+    text: 수
+  3:
+    text: 목
+  4:
+    text: 금
+  5:
+    text: 토
+  6:
+    text: 일
+break:
+  217100: 브레이크타임
+  217200: PICK불가시간

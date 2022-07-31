@@ -1,0 +1,296 @@
+default_size: 10
+member:
+  profile_path: owin/profile/
+  cd_third_party: 110300
+  level: 104600
+hash: sha512
+billkey:
+  no_shop: 99981000
+  no_partner: 9998
+  at_price_zero: 0
+  at_price: 1000
+  at_price_pg: 1000
+  nm_order: 카드등록_빌키결제
+parameter_replace_key: [ no_cardnum, no_expyea, no_expmon, card_no, passwd, ds_passwd, password, password_confirmation ]
+available_where:
+  all: 전체
+unable_card:
+  503004: 현대카드
+virtual_number:
+  uri: https://api.050bizcall.co.kr
+  id: ***
+  path:
+    list: /link/get_vns.do
+    link: /link/auto_mapp.do
+    unlink: /link/set_vn.do
+pg:
+  dev:
+    nicepay:
+      code: 500700
+      license_key: ***
+      mid: ***
+      cancel_id: ***
+      cancel_pwd: ***
+      encode: UTF-8
+      m_ssl: false
+      pay_method:
+        card: BILLKEY
+        order: BILL
+      action_type:
+        buy: PYO
+        cancel: CLO
+    fdk:
+      code: 500100
+      keydata: ***
+      keydata_billkey: ***
+      mxid: ***
+      mxid_billkey: ***
+      test: test
+      send_host: testps.firstpay.co.kr
+      auth_send_path: /jsp/common/pay.jsp
+      cert_send_path: /jsp/common/req.jsp
+      pub_key: /cert/public_test.pem
+    kcp:
+      code: 500600
+      gw_url: testpaygw.kcp.co.kr
+      home_dir: /Services/Pg/Kcp
+      log_path: /logs/kcp
+      id: ***
+      site_cd: ***
+      site_key: ***
+      log_level: 3
+      gw_port: 8090
+      pay_method: CARD
+      req_tx: pay
+      currency: 410
+      tx_cd: 00300001
+      tran_cd: 00100000
+      refund_cd: 00200000
+    uplus:
+      code: 500200
+      CST_PLATFORM: test
+      LGD_MERTKEY: ***
+      LGD_MID: ***
+      CST_MID: ***
+      P_LGD_MERTKEY: ***
+      P_LGD_MID: ***
+      home_dir: /Services/Pg/Uplus
+      encode: UTF-8
+gs_card_list:
+  0400: BC
+  0505: 하나(외환)
+  1200: 현대
+  0171: 농협
+  1300: 삼성
+  0404: 농협BC
+  0170: 국민
+  1400: 롯데
+  0300: 신한
+  0514: (구)신한
+cd_disc_type:
+  126100: 원
+  126200: '% 할인'
+  126300: 무료
+gs_card_corp:
+  0400: BC카드
+  0170: 국민카드
+  1400: 롯데카드
+  0300: 신한카드
+  0514: (구)신한
+  1300: 삼성카드
+  0171: 농협카드
+kmcert:
+  id: ***
+  uri: http://www.kmcert.com
+  port: 80
+  extend_var: 0000000000000000
+  separator: /
+  send_path: /kmcis/webc_CI/kmcisReqProc.jsp
+  retry_path: /kmcis/webc_CI/kmcisSmsRetryProc.jsp
+  complete_path: /kmcis/webc_CI/kmcisRetProc.jsp
+  error_code: [ KISH0001, KISH0002, KISH0003, KISH0004, KISH0005, KISH0006, KISH0008, KISH0009, KISH0010, KISH9999, KIST9998, KIST9998, KISR9501, KISR9502, KISR9503, KISR9504, KISR9505, KISR9506, KISR9507, KISR9508, KISR9509, KISR9510, KISR9511, KISR9512 ]
+oil:
+  arrival_check_time: 3
+  arrival_push_check_time: 3
+  oil_bank_disct_sinhan: 0
+  oil_bank_disct_ibk: 0
+  gs_no_partner: ${GS_NO_PARTNER}
+  ex_no_partner: ${EX_NO_PARTNER}
+  gs_oil_cd_pg: 500200
+  gs_cd_point_cp: 124004
+  gs_cd_point_sale_cp: 124005
+  gs_bin_card_no: 019061070005
+  basic_price_total: 30000
+  oil_disct: 0
+  card_discount: 0
+  gs_sale_cp: ${GS_SALE_CP}
+  gs_sale_card_min: ${GS_SALE_CARD_MIN}
+  gs_sale_card_max: ${GS_SALE_CARD_MAX}
+  gs_sale_card_min_basic: ${GS_SALE_CARD_MIN_BASIC}
+  gs_sale_card_max_basic: ${GS_SALE_CARD_MAX_BASIC}
+  gs_sale_card_min_rsm: ${GS_SALE_CARD_MIN_RSM}
+  gs_sale_card_max_rsm: ${GS_SALE_CARD_MAX_RSM}
+  gs_sale_basic_car_id: 0
+  gs_sale_basic_no_car_id: 0
+  gs_sale_rsm_car_id: 20
+  unorder_hour: 23
+  unorder_minute: 45
+  gs_card_corp:
+    503001: 0400
+    503007: 0170
+    503005: 1400
+    503019: 1400
+    503020: 1400
+    503002: 0300
+    503021: 0514
+    503003: 1300
+    503012: 0171
+gas_kind_product_name:
+  204100: 휘발유
+  204200: 경유
+  204300: LPG
+  204400: 고급 휘발유
+  204500: 전기
+  204600: 실내등유
+gas_kind_no_product:
+  204100: 1000
+  204200: 1002
+  204300: 1003
+  204400: 1001
+cu:
+  api_uri: ${CU_API_URL},
+  partner_code: ${CU_PARTNER_CODE}
+  partner_no: ${CU_PARTNER_NO}
+  path:
+    product_check: /retail/product_check
+    order: /retail/order
+    refund: /retail/order_cancel
+biz_kind:
+  drink: 201100
+  food: 201200
+  oil: 201300
+  life: 201400
+  parking: 201500
+  wash: 201600
+  care: 201610
+  retail: 201800
+  test: 201998
+  owin: 201999
+  ballet: 201510
+parking:
+  api_uri: ${PARKING_API_URL}
+  header_key: ${PARKING_HEADER_KEY}
+  header_value: ${PARKING_HEADER_VALUE}
+auto_parking:
+  api_uri: ${AUTO_PARKING_API_URL}
+  site_code: ${AUTO_PARKING_SITE_CODE}
+  secret_key: ${AUTO_PARKING_SECRET_KEY}
+  encrypt_key: ${AUTO_PARKING_ENCRYPT_KEY}
+  iv: ${AUTO_PARKING_IV}
+image_path: ${IMAGE_PATH}
+nusoap:
+  gs_key: ${NUSOAP_GS_KEY}
+  gs_iv: ${NUSOAP_GS_IV}
+  gs_company_code: ${NUSOAP_GS_COMPANY_CODE}
+  gs_team_code: ${NUSOAP_GS_TEAM_CODE}
+  gs_wsdl: ${NUSOAP_GS_WSDL}
+coupon_type:
+  RETAIL: 편의점
+  FNB: 식사/음료
+  OIL: 주유
+  PARKING: 주차
+  WASH: 세차
+gs_company_code: ${GS_COMPANY_CODE}
+two_plus_one:
+  single: (단품)
+  double: (2+1)
+policy_uri: http://app.owin.kr/product/sales_policies
+card_image:
+  503001: card_bccard.jpg
+  503002: shcard.jpg
+  503003: card_sscard.jpg
+  503004: card_hdcard.jpg
+  503005: card_lotte.jpg
+  503006: card_jcbcard.jpg
+  503007: kbcard.jpg
+  503008: card_kebcard.jpg
+  503011: card_suhcard.jpg
+  503012: card_nhcard.jpg
+  503013: card_citicard.jpg
+  503014: card_wrcard.jpg
+  503015: card_citicard.jpg
+  503017: card_shcard.jpg
+  503019: locard.jpg
+  503020: locard.jpg
+  503024: card_jbcard.jpg
+  503027: card_hncard.jpg
+  503030: card_ssgcard.jpg
+  503031: card_ibkcard.jpg
+  503032: card_imgcard.jpg
+  503033: card_kdbcard.jpg
+  503034: card_postcard.jpg
+payment_response:
+  BTR6:
+    code: 902100
+    message: 배치 - 분실/도난카드
+  CC43:
+    code: 902100
+    message: 신용카드 - 도난카드
+  CC44:
+    code: 902100
+    message: 신용카드 - 연체카드
+  CC45:
+    code: 902100
+    message: 신용카드 - 정지카드
+  8122:
+    code: 902300
+    message: 공통 - 신용카드 월최대한도 초과
+  8123:
+    code: 902300
+    message: 공통 - 신용카드 월최대한도 초과
+  8124:
+    code: 902300
+    message: 공통 - 신용카드 월최대한도 초과
+  8186:
+    code: 902300
+    message: 공통 - 거래불가카드(일최대승인한도초과)
+  8188:
+    code: 902300
+    message: 공통 - 거래불가카드(월최대승인한도초과)
+  8885:
+    code: 902300
+    message: 공통 - 일 승인 한도 초과
+  BTRG:
+    code: 902300
+    message: 배치 - 전표매입한도초과가맹점
+  BTTD:
+    code: 902300
+    message: 배치 - 카드 한도초과
+  BTXC:
+    code: 902300
+    message: 배치 - 매입한도초과
+  CC07:
+    code: 902300
+    messsage: 신용카드 - 1회 한도초과
+  CC08:
+    code: 902300
+    message: 신용카드 - 1일 한도초과
+  CC61:
+    code: 902300
+    message: 신용카드 - 거래금액 한도초과
+  CC62:
+    code: 902300
+    message: 신용카드 - 가맹점 한도초과
+app:
+  real:
+    version: 3.0
+    app_url:
+      ios: 
+      android: 
+  dev:
+    version: 3.0
+    app_url:
+      ios: 
+      android: 
+
+

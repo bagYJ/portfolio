@@ -1,0 +1,34 @@
+default:
+  member:
+    length: 596
+    type: 4200
+    scope: 20
+  point:
+    length: 112
+    type: 6100
+    scope: 30
+  card_mem:
+    length: 112
+    type: 5100
+    scope: 20
+sale:
+  member:
+    length: 596
+    type: 7100
+    scope: 20
+  card_info:
+    length: 112
+    type: 7300
+    scope: 10
+  use_list:
+    length: 128
+    type: 7400
+    scope: 30
+  limit:
+    length: 490
+    type: 7500
+    scope: 20
+  card_mem:
+    length: 112
+    type: 5100
+    scope: 20

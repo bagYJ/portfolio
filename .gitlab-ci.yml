@@ -1,0 +1,68 @@
+# This file is a template, and might need editing before it works on your project.
+# To contribute improvements to CI/CD templates, please follow the Development guide at:
+# https://docs.gitlab.com/ee/development/cicd/templates.html
+# This specific template is located at:
+# https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/ci/templates/Getting-Started.gitlab-ci.yml
+
+# This is a sample GitLab CI/CD configuration file that should run without any modifications.
+# It demonstrates a basic 3 stage CI/CD pipeline. Instead of real tests or scripts,
+# it uses echo commands to simulate the pipeline execution.
+#
+# A pipeline is composed of independent jobs that run scripts, grouped into stages.
+# Stages run in sequential order, but jobs within stages run in parallel.
+#
+# For more information, see: https://docs.gitlab.com/ee/ci/yaml/index.html#stages
+
+stages:
+  - test
+  - deploy
+
+testing:
+  stage: test
+  script:
+    - composer update
+    - ./vendor/bin/phpstan analyse --memory-limit=-1
+  tags:
+    - owin-api
+  only:
+    - develop
+
+deploy-prod-141:
+  variables:
+    SERVER: "112.175.183.141"
+  stage: deploy
+  script:
+    - rsync -avzh --exclude './storage/framework' --exclude './storage/logs' --exclude './bootstrap/cache' ./* root@"$SERVER":/owin/api/www/
+    - ssh root@"$SERVER" "cd /owin/api/www/;mv env .env;chown -R nobody:nobody ./storage/framework;chown -R nobody:nobody ./storage/logs;composer update"
+  only:
+    - develop
+
+deploy-prod-142:
+  variables:
+    SERVER: "112.175.183.142"
+  stage: deploy
+  script:
+    - rsync -avzh --exclude './storage/framework' --exclude './storage/logs' --exclude './bootstrap/cache' ./* root@"$SERVER":/owin/api/www/
+    - ssh root@"$SERVER" "cd /owin/api/www/;mv env .env;chown -R nobody:nobody ./storage/framework;chown -R nobody:nobody ./storage/logs;composer update;supervisorctl reload;supervisorctl update;supervisorctl start laravel-worker:*"
+  only:
+    - develop
+
+deploy-prod-143:
+  variables:
+    SERVER: "112.175.183.143"
+  stage: deploy
+  script:
+    - rsync -avzh --exclude './storage/framework' --exclude './storage/logs' --exclude './bootstrap/cache' ./* root@"$SERVER":/owin/api/www/
+    - ssh root@"$SERVER" "cd /owin/api/www/;mv env .env;chown -R nobody:nobody ./storage/framework;chown -R nobody:nobody ./storage/logs;composer update;"
+  only:
+    - develop
+
+end:
+  stage: .post
+  script:
+    - pwd
+  only:
+    - develop
+
+variables:
+  GIT_SSL_NO_VERIFY: "true"

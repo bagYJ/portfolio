@@ -1,0 +1,43 @@
+uri: https://fcm.googleapis.com/fcm/send
+manager:
+  appkey: ${FCM_MANAGER_APPKEY}
+  message: '주문번호: %s'
+  type:
+    neworder:
+      title: 주문이 접수되었습니다.
+    arrived:
+      title: 차량이 도착하였습니다.
+    canceled:
+      title: 주문이 %s취소되었습니다.
+    auto_cancel:
+      title: 주문이 자동취소되었습니다.
+
+user:
+  appkey: ${FCM_USER_APPKEY}
+  RETAIL:
+    shop_accept:
+      title: '[주문수락] %s'
+      body: 고객님의 주문이 수락되었습니다. 픽업시간(%s)에 맞춰 매장 앞에 도착해 주세요.
+    shop_complete:
+      title: '[준비완료] %s'
+      body: 주문하신 상품 준비가 완료되었습니다. 매장 앞에 도착 후 '도착알림' 버튼을 눌러주세요.
+    delivery_complete:
+      title: '[전달완료] %s'
+      body: 주문하신 상품을 전달 완료하였습니다. 이용해 주셔서 감사합니다.
+    cancel:
+      title: '[주문취소] %s'
+      body: 매장이 바빠 주문을 수락하지 못해 자동 취소 되었어요. 다음에 다시 주문해 주세요.
+    cancel_etc:
+      title: '[주문취소] %s'
+      body: 매장에서 기타 사유로 주문을 취소 하였습니다.
+  FNB:
+    cancel_etc:
+      title: '[결제취소] %s'
+      body: 주문하신 상품의 결제가 취소되었습니다.
+  PARKING:
+    enter:
+      title: '[입차완료] %s'
+      body: '자동출차 가능한 주차장에 입차 하셨습니다. 등록하신 결제수단으로 자동결제 됩니다.'
+    complete:
+      title: '[출차완료] %s'
+      body: '등록하신 수단을 통해 %s원 결제완료되었습니다. 결제내역은 주문내역 > 상세페이지를 통해 확인 가능합니다.'

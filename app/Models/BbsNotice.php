@@ -1,0 +1,58 @@
+<?php
+
+/**
+ * Created by Reliese Model.
+ */
+
+namespace App\Models;
+
+use Carbon\Carbon;
+
+/**
+ * Class BbsNotice
+ *
+ * @property int $no
+ * @property string|null $id_admin
+ * @property string|null $ds_title
+ * @property string|null $ds_content
+ * @property string|null $yn_show
+ * @property Carbon|null $dt_reg
+ * @property string|null $id_upt
+ * @property Carbon|null $dt_upt
+ * @property string|null $cd_service
+ * @property string|null $ds_popup_thumb
+ * @property string|null $yn_popup
+ * @property string|null $yn_prior_popup
+ * @property string|null $cd_bbs_target
+ *
+ * @package App\Models
+ */
+class BbsNotice extends Model
+{
+    protected $primaryKey = 'no';
+    public $timestamps = true;
+
+    const CREATED_AT = 'dt_reg';
+    const UPDATED_AT = 'dt_upt';
+    const DELETED_AT = null;
+
+    protected $dates = [
+        'dt_reg',
+        'dt_upt'
+    ];
+
+    protected $fillable = [
+        'id_admin',
+        'ds_title',
+        'ds_content',
+        'yn_show',
+        'dt_reg',
+        'id_upt',
+        'dt_upt',
+        'cd_service',
+        'ds_popup_thumb',
+        'yn_popup',
+        'yn_prior_popup',
+        'cd_bbs_target'
+    ];
+}
