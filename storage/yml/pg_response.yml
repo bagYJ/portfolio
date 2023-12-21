@@ -1,0 +1,51 @@
+BTR6:
+  code: 902100
+  message: 배치 - 분실/도난카드
+CC43:
+  code: 902100
+  message: 신용카드 - 도난카드
+CC44:
+  code: 902100
+  message: 신용카드 - 연체카드
+CC45:
+  code: 902100
+  message: 신용카드 - 정지카드
+8122:
+  code: 902300
+  message: 공통 - 신용카드 월최대한도 초과
+8123:
+  code: 902300
+  message: 공통 - 신용카드 월최대한도 초과
+8124:
+  code: 902300
+  message: 공통 - 신용카드 월최대한도 초과
+8186:
+  code: 902300
+  message: 공통 - 거래불가카드(일최대승인한도초과)
+8188:
+  code: 902300
+  message: 공통 - 거래불가카드(월최대승인한도초과)
+8885:
+  code: 902300
+  message: 공통 - 일 승인 한도 초과
+BTRG:
+  code: 902300
+  message: 배치 - 전표매입한도초과가맹점
+BTTD:
+  code: 902300
+  message: 배치 - 카드 한도초과
+BTXC:
+  code: 902300
+  message: 배치 - 매입한도초과
+CC07:
+  code: 902300
+  messsage: 신용카드 - 1회 한도초과
+CC08:
+  code: 902300
+  message: 신용카드 - 1일 한도초과
+CC61:
+  code: 902300
+  message: 신용카드 - 거래금액 한도초과
+CC62:
+  code: 902300
+  message: 신용카드 - 가맹점 한도초과
